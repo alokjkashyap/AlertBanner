@@ -1,5 +1,6 @@
 package dev.alox.alertbanner;
 
+import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -31,6 +32,7 @@ public final class AlertBanner extends BaseTransientBottomBar<AlertBanner> {
         final View content = inflater.inflate(R.layout.alert_layout,parent,false);
         final ContentViewCallbacks viewCallbacks = new ContentViewCallbacks(content);
         final AlertBanner alertBanner = new AlertBanner(parent,content,viewCallbacks);
+        alertBanner.getView().setBackgroundColor(Color.TRANSPARENT);
 
         alertBanner.getView().setPadding(0,0,0,0);
         alertBanner.setDuration(duration);
