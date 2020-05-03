@@ -66,7 +66,7 @@ public final class AlertBanner extends BaseTransientBottomBar<AlertBanner> {
         public void animateContentIn(int delay, int duration) {
             // add custom *in animations for your views
             // e.g. original snackbar uses alpha animation, from 0 to 1
-            ViewCompat.setScaleY(content, 0f);
+            ViewCompat.setScaleY(content, 1f);
             ViewCompat.animate(content)
                     .scaleY(1f).setDuration(duration)
                     .setStartDelay(delay);
@@ -78,7 +78,6 @@ public final class AlertBanner extends BaseTransientBottomBar<AlertBanner> {
             // e.g. original snackbar uses alpha animation, from 1 to 0
             ViewCompat.setScaleY(content, 1f);
             ViewCompat.animate(content)
-                    .scaleY(0f)
                     .setDuration(duration)
                     .setStartDelay(delay);
         }
