@@ -2,6 +2,7 @@ package dev.alox.alertbanner;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.view.View;
 import android.view.ViewGroup;
@@ -22,6 +23,7 @@ public class MainActivity extends AppCompatActivity {
                 AlertBanner alertBanner = AlertBanner.make((ViewGroup) findViewById(R.id.bannerView), Snackbar.LENGTH_LONG);
                 alertBanner.setText("No internet detected");
                 alertBanner.setBackgroundColor(getResources().getColor(R.color.red));
+                alertBanner.setFont("fonts/nunito_bold.ttf");
                 alertBanner.show();
             }
         });

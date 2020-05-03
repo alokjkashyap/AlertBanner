@@ -1,6 +1,8 @@
 package dev.alox.alertbanner;
 
 import android.graphics.Color;
+import android.graphics.Typeface;
+import android.graphics.fonts.FontFamily;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -8,6 +10,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.annotation.ColorInt;
+import androidx.annotation.FontRes;
 import androidx.annotation.NonNull;
 import androidx.core.view.ViewCompat;
 
@@ -48,6 +51,12 @@ public final class AlertBanner extends BaseTransientBottomBar<AlertBanner> {
     public AlertBanner setBackgroundColor(@ColorInt int color){
         LinearLayout mainlayout = (LinearLayout)getView().findViewById(R.id.snack_layout);
         mainlayout.setBackgroundColor(color);
+        return this;
+    }
+
+    public AlertBanner setFont(String path){
+        TextView textView = (TextView)getView().findViewById(R.id.snack_layout_text);
+        textView.setTypeface(Typeface.createFromAsset(getContext().getAssets(),path));
         return this;
     }
 
